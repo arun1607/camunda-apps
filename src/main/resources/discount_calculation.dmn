@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="discount_evaluation" name="Discount Calculator">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Amount Spent">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>expenditure</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_1ilbkl4" label="Item count">
+        <inputExpression id="LiteralExpression_1mmwalj" typeRef="integer">        <text>itemCount</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Discount" name="discount" typeRef="double" />
+      <rule id="row-888999422-1">
+        <inputEntry id="UnaryTests_1iew19f">        <text>[2000..5000]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0lbdylh">        <text>[10..20]</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_03utlt2">        <text>50</text>
+</outputEntry>
+      </rule>
+      <rule id="row-888999422-2">
+        <inputEntry id="UnaryTests_12ow4dj">        <text>[500..1999]</text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ue6qjt">        <text>-</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_00q5wwu">        <text>25</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
